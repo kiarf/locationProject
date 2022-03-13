@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Location", "Location\Location.csproj", "{2E5CBC8B-2B63-4033-B44A-4A74D6156556}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecFlowLocation", "SpecFlowLocation\SpecFlowLocation.csproj", "{2E262B0A-40C0-42BB-B332-060E729BDF6C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2E5CBC8B-2B63-4033-B44A-4A74D6156556} = {2E5CBC8B-2B63-4033-B44A-4A74D6156556}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E5CBC8B-2B63-4033-B44A-4A74D6156556}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E5CBC8B-2B63-4033-B44A-4A74D6156556}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E5CBC8B-2B63-4033-B44A-4A74D6156556}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E5CBC8B-2B63-4033-B44A-4A74D6156556}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E262B0A-40C0-42BB-B332-060E729BDF6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E262B0A-40C0-42BB-B332-060E729BDF6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E262B0A-40C0-42BB-B332-060E729BDF6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E262B0A-40C0-42BB-B332-060E729BDF6C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {06107511-849B-4A01-B590-760FB60B5329}
+	EndGlobalSection
+EndGlobal
