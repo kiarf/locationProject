@@ -1,26 +1,24 @@
-﻿using System;
-
-namespace Location
+﻿namespace Location
 {
     public class Vehicle
     {
         public Vehicle(string immatriculation, string brand, string model, string color, decimal reservationPrice, decimal pricePerKilometer, int horsePower)
         {
             Immatriculation = immatriculation;
-            Brand = brand;
-            Model = model;
-            Color = color;
+            _brand = brand;
+            _model = model;
+            _color = color;
             ReservationPrice = reservationPrice;
             PricePerKilometer = pricePerKilometer;
             HorsePower = horsePower;
         }
 
-        public string Immatriculation { get; set; }
-        private string Brand { get; set; }
-        private string Model { get; set; }
-        private string Color { get; set; }
-        public decimal ReservationPrice{ get; set; }
-        public decimal PricePerKilometer { get; set; }
-        public int HorsePower { get; set; }
+        public string Immatriculation { get; }
+        private readonly string _brand;
+        private readonly string _model;
+        private readonly string _color;
+        public decimal ReservationPrice { get; }
+        public decimal PricePerKilometer { get; }
+        public int HorsePower { get; }
     }
 }

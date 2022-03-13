@@ -18,7 +18,7 @@ namespace Location
         public List<Client> Clients { get; }
         public Client LoggedClient { get; set; }
         public List<Reservation> Reservations { get; }
-        public string Output { get; set; }
+        private string Output { get; set; }
 
         public void AddClient(Client client)
         {
@@ -99,7 +99,7 @@ namespace Location
             }
         }
 
-        public List<Reservation> GetReservations()
+        public IEnumerable<Reservation> GetReservations()
         {
             return Reservations;
         }
@@ -119,7 +119,31 @@ namespace Location
                 Output = "The vehicle is not available during this period";
                 return false;
             }
+            
+            var clientBirthDate = Clients.FirstOrDefault(c => c.Login == reservation.Login)?.BirthDate;
+            if (!clientBirthDate.HasValue)
+            {
+                Output = "Client not found or birthdate not filled";
+                return false;
+            }
+            
+            if (clientBirthDate.Value.AddYears(25) > reservation.StartDate && reservation.Vehicle.HorsePower >= 13)
+            {
+                Output = "You need to be 25 or older to drive a vehicle above 13 Horse Power";
+                return false;
+            }
+            
+            if (clientBirthDate.Value.AddYears(21) > reservation.StartDate && reservation.Vehicle.HorsePower >= 8)
+            {
+                Output = "You need to be 21 or older to drive a vehicle above 8 Horse Power";
+                return false;
+            }
 
+            if (clientBirthDate.Value.AddYears(18) > reservation.StartDate)
+            {
+                Output = "You need to be 18 or older to loan a vehicle";
+                return false;
+            }
             return true;
         }
     }

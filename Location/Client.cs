@@ -11,11 +11,11 @@ namespace Location
                       string licenceNumber,
                       string login)
         {
-            FirstName = firstName;
-            LastName = lastName;
+            _firstName = firstName;
+            _lastName = lastName;
             BirthDate = birthDate;
-            LicenceDate = licenceDate;
-            LicenceNumber = licenceNumber;
+            _licenceDate = licenceDate;
+            _licenceNumber = licenceNumber;
             Login = login;
         }
 
@@ -27,21 +27,21 @@ namespace Location
                       string login,
                       string password)
         {
-            FirstName = firstName;
-            LastName = lastName;
+            _firstName = firstName;
+            _lastName = lastName;
             BirthDate = birthDate;
-            LicenceDate = licenceDate;
-            LicenceNumber = licenceNumber;
+            _licenceDate = licenceDate;
+            _licenceNumber = licenceNumber;
             Login = login;
             Password = password;
         }
 
         public string Login { get; }
         public string Password { get; }
-        public string FirstName { get; }
-        public string LastName { get; }
+        private string _firstName;
+        private string _lastName;
         public DateTime BirthDate { get; }
-        public DateTime LicenceDate { get; }
-        public string LicenceNumber { get; }
+        private DateTime _licenceDate;
+        private string _licenceNumber;
     }
 }
